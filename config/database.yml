@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+
+development:
+  <<: *default
+  database: rails_elearning_app_development
+
+test:
+  <<: *default
+  database: rails_elearning_app_test
+
+production:
+  <<: *default
+  database: rails_elearning_app_production
+  username: rails_elearning_app
+  password: <%= ENV["RAILS_ELEARNING_APP_DATABASE_PASSWORD"] %>
