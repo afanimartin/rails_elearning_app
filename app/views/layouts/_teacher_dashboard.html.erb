@@ -1,22 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-<title>Med'ressa Elearning</title>
-
-<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.svg">
-
-<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
-
-<link rel="stylesheet" href="assets/css/feather.css">
-
-<link rel="stylesheet" href="assets/plugins/boxicons/css/boxicons.min.css">
-
-</head>
-<body>
-
 <div class="main-wrapper">
 
 <header class="header header-page">
@@ -143,12 +124,6 @@
 </div>
 <a class="dropdown-item" href="instructor-dashboard.html"><i class="feather-home me-1"></i> Dashboard</a>
 <a class="dropdown-item" href="instructor-settings.html"><i class="feather-star me-1"></i> Edit Profile</a>
-<div class="dropdown-item night-mode">
-<span><i class="feather-moon me-1"></i> Night Mode </span>
-<div class="form-check form-switch check-on m-0">
-<input class="form-check-input" type="checkbox" id="night-mode">
-</div>
-</div>
 <a class="dropdown-item" href="index.html"><i class="feather-log-out me-1"></i> Logout</a>
 </div>
 </li>
@@ -203,54 +178,52 @@
 <div class="settings-menu">
 <h3>Dashboard</h3>
 <ul>
-  <li class="nav-item active">
-  <li><%= link_to teacher_dashboard_path, class: "nav-link" do %>Dashboard<% end %></li>
+  <li class="nav-item">
+    <%= link_to teacher_profile_path, class: "nav-link" do %>
+      <i class="bi bi-person"></i>My Profile
+    <% end %>
   </li>
   <li class="nav-item">
-  <li><%= link_to teacher_profile_path, class: "nav-link" do %>My Profile<% end %></li>
-  <i class="bi bi-user"></i>
+    <%= link_to teacher_course_path, class: "nav-link" do %>
+      <i class="bi bi-sliders"></i>My Courses
+    <% end %>
   </li>
   <li class="nav-item">
-    <a href="instructor-chat.html" class="nav-link">
-    <i class="bx bxs-chat"></i>My courses
-    </a>
+    <%= link_to teacher_assignment_path, class: "nav-link" do %>
+      <i class="bi bi-list"></i>Assignments
+    <% end %>
   </li>
   <li class="nav-item">
-    <a href="instructor-chat.html" class="nav-link">
-    <i class="bx bxs-chat"></i>Assignments
-    </a>
+    <%= link_to teacher_quiz_path, class: "nav-link" do %>
+      <i class="bi bi-question-circle"></i>Quizzes
+    <% end %>
   </li>
   <li class="nav-item">
-    <a href="instructor-quiz.html" class="nav-link">
-    <i class="bx bxs-shapes"></i>Quizzes
-    </a>
+    <%= link_to teacher_announcement_path, class: "nav-link" do %>
+      <i class="bi bi-question-circle"></i>Announcements
+    <% end %>
   </li>
   <li class="nav-item">
-    <a href="instructor-chat.html" class="nav-link">
-    <i class="bx bxs-chat"></i>Announcements
-    </a>
+    <%= link_to teacher_message_path, class: "nav-link" do %>
+      <i class="bi bi-chat"></i>Messages
+    <% end %>
   </li>
   <li class="nav-item">
-    <a href="instructor-chat.html" class="nav-link">
-    <i class="bx bxs-chat"></i>Messages
-    </a>
-  </li>
-  <li class="nav-item">
-  <a href="instructor-notifications.html" class="nav-link">
-  <i class="bx bxs-bell"></i>Notifications
-  </a>
+    <%= link_to teacher_notification_path, class: "nav-link" do %>
+      <i class="bi bi-bell"></i>Notifications
+    <% end %>
   </li>
 </ul>
 <h3>Account Settings</h3>
 <ul>
   <li class="nav-item">
-  <a href="instructor-settings.html" class="nav-link ">
-  <i class="bx bxs-cog"></i>Settings
-  </a>
+    <a href="instructor-settings.html" class="nav-link ">
+    <i class="bi bi-gear"></i>Settings
+    </a>
   </li>
   <li class="nav-item">
   <a href="index.html" class="nav-link">
-  <i class="bx bxs-log-out"></i>Logout
+    <i class="bi bi-box-arrow-right"></i>Logout
   </a>
   </li>
 </ul>
@@ -716,108 +689,7 @@ Information About UI/UX Design Degree
 </div>
 </div>
 
-
-<footer class="footer">
-
-<div class="footer-top">
-<div class="container">
-<div class="row">
-<div class="col-lg-4 col-md-6">
-
-<div class="footer-widget footer-about">
-<div class="footer-logo">
-<img src="assets/img/logo.svg" alt="logo">
-</div>
-<div class="footer-about-content">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat mauris Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat mauris</p>
-</div>
-</div>
-
-</div>
-<div class="col-lg-2 col-md-6">
-
-<div class="footer-widget footer-menu">
-<h2 class="footer-title">For Instructor</h2>
-<ul>
-<li><a href="instructor-profile.html">Profile</a></li>
-<li><a href="login.html">Login</a></li>
-<li><a href="register.html">Register</a></li>
-<li><a href="instructor-list.html">Instructor</a></li>
-<li><a href="instructor-dashboard.html"> Dashboard</a></li>
-</ul>
-</div>
-
-</div>
-<div class="col-lg-2 col-md-6">
-
-<div class="footer-widget footer-menu">
-<h2 class="footer-title">For Student</h2>
-<ul>
-<li><a href="student-profile.html">Profile</a></li>
-<li><a href="login.html">Login</a></li>
-<li><a href="register.html">Register</a></li>
-<li><a href="students-list.html">Student</a></li>
-<li><a href="student-dashboard.html"> Dashboard</a></li>
-</ul>
-</div>
-
-</div>
-<div class="col-lg-4 col-md-6">
-
-<div class="footer-widget footer-contact">
-<h2 class="footer-title">News letter</h2>
-<div class="news-letter">
-<form>
-<input type="text" class="form-control" placeholder="Enter your email address" name="email">
-</form>
-</div>
-<div class="footer-contact-info">
-<div class="footer-address">
-<img src="assets/img/icon/icon-20.svg" alt="Img" class="img-fluid">
-<p> 3556 Beech Street, San Francisco,<br> California, CA 94108 </p>
-</div>
-<p>
-<img src="assets/img/icon/icon-19.svg" alt="Img" class="img-fluid">
-<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f89c8a9d99958b94958bb89d80999588949dd69b9795">[email&#160;protected]</a>
-</p>
-<p class="mb-0">
-<img src="assets/img/icon/icon-21.svg" alt="Img" class="img-fluid">
-+19 123-456-7890
-</p>
-</div>
-</div>
-
-</div>
-</div>
-</div>
-</div>
-
-
-<div class="footer-bottom">
-<div class="container">
-
-<div class="copyright">
-<div class="row">
-<div class="col-md-6">
-<div class="privacy-policy">
-<ul>
-<li><a href="term-condition.html">Terms</a></li>
-<li><a href="privacy-policy.html">Privacy</a></li>
-</ul>
-</div>
-</div>
-<div class="col-md-6">
-<div class="copyright-text">
-<p class="mb-0">&copy; 2024 DreamsLMS. All rights reserved.</p>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-</div>
-
-</footer>
+<%= render "layouts/footer" %>
 
 </div>
 
@@ -831,4 +703,3 @@ Information About UI/UX Design Degree
 
 <script src="assets/js/script.js" type="70d3aaf03a5e70a48ec01130-text/javascript"></script>
 <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="70d3aaf03a5e70a48ec01130-|49" defer></script></body>
-</html>
