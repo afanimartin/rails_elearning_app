@@ -1,152 +1,10 @@
 <div class="main-wrapper">
 
-<header class="header header-page">
-<div class="header-fixed">
-<nav class="navbar navbar-expand-lg header-nav scroll-sticky">
-<div class="container ">
-<a href="index.html" class="navbar-brand logo">
-<img src="assets/img/logo.svg" class="img-fluid" alt="Logo">
-</a>
-</div>
-<div class="main-menu-wrapper">
-<div class="menu-header">
-<a href="index.html" class="menu-logo">
-<img src="assets/img/logo.svg" class="img-fluid" alt="Logo">
-</a>
-<a id="menu_close" class="menu-close" href="javascript:void(0);">
-<i class="fas fa-times"></i>
-</a>
-</div>
-</li>
-</div>
+<%= render "shared/navbar" %>
 
-<ul class="nav header-navbar-rht">
-<li class="nav-item user-nav">
-<a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
-<span class="user-img">
-<img src="assets/img/user/user-17.jpg" alt="Img">
-<span class="status online"></span>
-</span>
-</a>
-<div class="users dropdown-menu dropdown-menu-right" data-popper-placement="bottom-end">
-<div class="user-header">
-<div class="avatar avatar-sm">
-<img src="assets/img/user/user-17.jpg" alt="User Image" class="avatar-img rounded-circle">
-</div>
-<div class="user-text">
-<h6><%= current_user.email %></h6>
-<p class="text-muted mb-0">Instructor</p>
-</div>
-</div>
-<a class="dropdown-item" href="instructor-dashboard.html"><i class="feather-home me-1"></i> Dashboard</a>
-<a class="dropdown-item" href="instructor-settings.html"><i class="feather-star me-1"></i> Edit Profile</a>
-<a class="dropdown-item" href="index.html"><i class="feather-log-out me-1"></i> Logout</a>
-</div>
-</li>
-</ul>
-</div>
-</nav>
-</div>
-</header>
+<%= render "shared/breadcrumb", breadcrumb_title: "My Dashboard" %>
 
-
-<div class="breadcrumb-bar breadcrumb-bar-info">
-<div class="container">
-<div class="row">
-<div class="col-md-12 col-12">
-<div class="breadcrumb-list">
-<h2 class="breadcrumb-title">Dashboard</h2>
-<nav aria-label="breadcrumb" class="page-breadcrumb">
-<ol class="breadcrumb">
-<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-<li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-</ol>
-</nav>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-
-<div class="page-content">
-<div class="container">
-<div class="row">
-
-<div class="col-xl-3 col-lg-3 theiaStickySidebar">
-<div class="settings-widget dash-profile">
-<div class="settings-menu">
-<div class="profile-bg">
-<div class="profile-img">
-<a href="instructor-profile.html"><img src="assets/img/user/user-17.jpg" alt="Img"></a>
-</div>
-</div>
-<div class="profile-group">
-<div class="profile-name text-center">
-<h4><a href="instructor-profile.html"><%= current_user.email %></a></h4>
-<p>Instructor</p>
-<a href="add-course.html" class="add-course btn-primary">Add New Course</a>
-</div>
-</div>
-</div>
-</div>
-<div class="settings-widget account-settings">
-<div class="settings-menu">
-<h3>Dashboard</h3>
-<ul>
-  <li class="nav-item">
-    <%= link_to teacher_profile_path, class: "nav-link" do %>
-      <i class="bi bi-person"></i>My Profile
-    <% end %>
-  </li>
-  <li class="nav-item">
-    <%= link_to teacher_course_path, class: "nav-link" do %>
-      <i class="bi bi-sliders"></i>My Courses
-    <% end %>
-  </li>
-  <li class="nav-item">
-    <%= link_to teacher_assignment_path, class: "nav-link" do %>
-      <i class="bi bi-list"></i>Assignments
-    <% end %>
-  </li>
-  <li class="nav-item">
-    <%= link_to teacher_quiz_path, class: "nav-link" do %>
-      <i class="bi bi-question-circle"></i>Quizzes
-    <% end %>
-  </li>
-  <li class="nav-item">
-    <%= link_to teacher_announcement_path, class: "nav-link" do %>
-      <i class="bi bi-question-circle"></i>Announcements
-    <% end %>
-  </li>
-  <li class="nav-item">
-    <%= link_to teacher_message_path, class: "nav-link" do %>
-      <i class="bi bi-chat"></i>Messages
-    <% end %>
-  </li>
-  <li class="nav-item">
-    <%= link_to teacher_notification_path, class: "nav-link" do %>
-      <i class="bi bi-bell"></i>Notifications
-    <% end %>
-  </li>
-</ul>
-<h3>Account Settings</h3>
-<ul>
-  <li class="nav-item">
-    <a href="instructor-settings.html" class="nav-link ">
-    <i class="bi bi-gear"></i>Settings
-    </a>
-  </li>
-  <li class="nav-item">
-  <a href="index.html" class="nav-link">
-    <i class="bi bi-box-arrow-right"></i>Logout
-  </a>
-  </li>
-</ul>
-</div>
-</div>
-</div>
-
+<%= render "shared/profile_sidebar" %>
 
 <div class="col-xl-9 col-lg-9">
 
@@ -581,7 +439,7 @@ Information About UI/UX Design Degree
 </div>
 </div>
 
-<%= render "layouts/footer" %>
+<%= render "shared/footer" %>
 
 </div>
 

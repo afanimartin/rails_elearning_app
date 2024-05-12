@@ -5,4 +5,5 @@ class School < ApplicationRecord
   
   belongs_to :address
   belongs_to :category
+  has_many :users
 end

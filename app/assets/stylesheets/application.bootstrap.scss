@@ -15363,7 +15363,7 @@ input[type="password"]::-ms-clear {
 
 .breadcrumb-bar.breadcrumb-bar-info {
   padding: 40px 0;
-  background: url("../img/bg/breadcrumb-bar.png");
+  background: url("https://res.cloudinary.com/dmyhendcr/image/upload/v1715516386/breadcrumb-bar_yw8wx3.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -28511,6 +28511,15 @@ h6 {
 .auth-section {
   width: 40%;
   margin: 100px auto;
+}
+
+#medressa-logo {
+  color: #002058 !important;
+  font-weight: bold;
+}
+
+.profile-logout-btn {
+  padding: 15px;
 }
 
 @media screen and (max-width: 425px) {
