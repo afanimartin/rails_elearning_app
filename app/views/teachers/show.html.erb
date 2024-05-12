@@ -15,43 +15,43 @@
 <div class="col-sm-6">
 <div class="contact-info">
 <h6>First Name</h6>
-<p>Eugene</p>
+<p><%= capitalize_string(current_user.first_name) %></p>
 </div>
 </div>
 <div class="col-sm-6">
   <div class="contact-info">
   <h6>Last Name</h6>
-  <p>Andre</p>
+  <p><%= capitalize_string(current_user.last_name) %></p>
   </div>
 </div>
 <div class="col-sm-6">
   <div class="contact-info">
   <h6>School</h6>
-  <p><%= current_user.school.name %></p>
+  <p><%= capitalize_string(current_user.school.name) %></p>
   </div>
 </div>
 <div class="col-sm-6">
   <div class="contact-info">
   <h6>Registration Date</h6>
-  <p>January 16, 2024, 11:15 AM</p>
+  <p><%= current_user.created_at %></p>
   </div>
 </div>
 <div class="col-sm-6">
   <div class="contact-info">
   <h6>Date of birth</h6>
-  <p>January 16, 2024, 11:15 AM</p>
+  <p><%= current_user.date_of_birth %></p>
   </div>
 </div>
 <div class="col-sm-6">
 <div class="contact-info">
 <h6>Phone Number</h6>
-<p>89104-71829</p>
+<p><%= current_user.phone %></p>
 </div>
 </div>
 <div class="col-sm-12">
 <div class="contact-info mb-0">
 <h6>Bio</h6>
-<p> Very well thought out and articulate communication. Clear milestones, deadlines and fast work. Patience. Infinite patience. No shortcuts. Even if the client is being careless. Some quick example text to build on the card title and bulk the card's content Moltin gives you platform. As a highly skilled and successfull product development and design specialist with more than 4 Years of My experience lies in successfully conceptualizing, designing, and modifying consumer products specific to interior design and home furnishings.</p>
+<p><%= current_user.bio %></p>
 </div>
 </div>
 </div>

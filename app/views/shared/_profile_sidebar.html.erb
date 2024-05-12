@@ -14,6 +14,8 @@
 <div class="profile-name text-center">
 <h4><a href="instructor-profile.html"><%= current_user.email %></a></h4>
 <p>Instructor</p>
+<br/>
+<%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-success" %>
 </div>
 </div>
 </div>
@@ -28,32 +30,32 @@
     <% end %>
   </li>
   <li class="nav-item">
-    <%= link_to teacher_course_path, class: "nav-link" do %>
+    <%= link_to teacher_courses_path, class: "nav-link" do %>
       <i class="bi bi-sliders"></i>My Courses
     <% end %>
   </li>
   <li class="nav-item">
-    <%= link_to teacher_assignment_path, class: "nav-link" do %>
+    <%= link_to teacher_assignments_path, class: "nav-link" do %>
       <i class="bi bi-list"></i>Assignments
     <% end %>
   </li>
   <li class="nav-item">
-    <%= link_to teacher_quiz_path, class: "nav-link" do %>
+    <%= link_to teacher_quizzes_path, class: "nav-link" do %>
       <i class="bi bi-question-circle"></i>Quizzes
     <% end %>
   </li>
   <li class="nav-item">
-    <%= link_to teacher_announcement_path, class: "nav-link" do %>
+    <%= link_to teacher_announcements_path, class: "nav-link" do %>
       <i class="bi bi-question-circle"></i>Announcements
     <% end %>
   </li>
   <li class="nav-item">
-    <%= link_to teacher_message_path, class: "nav-link" do %>
+    <%= link_to teacher_messages_path, class: "nav-link" do %>
       <i class="bi bi-chat"></i>Messages
     <% end %>
   </li>
   <li class="nav-item">
-    <%= link_to teacher_notification_path, class: "nav-link" do %>
+    <%= link_to teacher_notifications_path, class: "nav-link" do %>
       <i class="bi bi-bell"></i>Notifications
     <% end %>
   </li>
