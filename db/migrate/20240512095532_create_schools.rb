@@ -1,6 +1,7 @@
 class CreateSchools < ActiveRecord::Migration[7.0]
   def change
-    create_table :schools do |t|
+    create_table :schools, id: false do |t|
+      t.string :id, primary_key: true
       t.text :bio
       t.string :name
       t.string :phone

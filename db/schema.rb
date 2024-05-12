@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_05_12_095532) do
+ActiveRecord::Schema[7.0].define(version: 2024_05_12_110704) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,7 +26,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_12_095532) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "schools", force: :cascade do |t|
+  create_table "schools", id: :string, force: :cascade do |t|
     t.text "bio"
     t.string "name"
     t.string "phone"
@@ -61,12 +61,18 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_12_095532) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "role", default: 0
+    t.boolean "completed", default: false, null: false
+    t.string "gender"
+    t.date "date_of_birth"
+    t.string "school_id", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["school_id"], name: "index_users_on_school_id"
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
   add_foreign_key "schools", "addresses"
   add_foreign_key "schools", "categories"
+  add_foreign_key "users", "schools"
 end
