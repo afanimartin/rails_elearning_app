@@ -10,6 +10,8 @@ gem "pg", "~> 1.1"
 
 gem "devise"
 
+gem "avo", ">= 3.2.1"
+
 gem "puma", "~> 5.0"
 
 gem "jsbundling-rails"
