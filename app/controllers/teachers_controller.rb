@@ -6,6 +6,7 @@ class TeachersController < ApplicationController
   end
 
   def courses
+    @teacher_courses = current_user.courses
   end
 
   def messages

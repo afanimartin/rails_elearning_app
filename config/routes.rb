@@ -20,8 +20,10 @@ Rails.application.routes.draw do
   get 'teacher/announcements', to: 'teachers#announcements'
 
   # student routes
-  get 'student_dashboard', to: 'students#index'
+  get 'student/dashboard', to: 'students#index'
 
   # admin routes
-  get 'admin_dashboard', to: 'admins#index'
+  get 'admin/dashboard', to: 'admins#index'
+
+  resources :courses
 end

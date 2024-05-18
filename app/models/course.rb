@@ -5,7 +5,7 @@ class Course < ApplicationRecord
 
   belongs_to :school
   has_many :course_modules
-  belongs_to :instructor, class_name: 'User'
+  belongs_to :user
 
   validates :name, presence: true, uniqueness: { scope: :school_id }
   validates :credit_hours, presence: true
