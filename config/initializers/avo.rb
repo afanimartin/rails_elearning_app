@@ -5,5 +5,8 @@ Avo.configure do |config|
     "Avo::Resources::School",
     "Avo::Resources::Address",
     "Avo::Resources::Category",
+    "Avo::Resources::Course",
+    "Avo::Resources::CourseModule",
+    "Avo::Resources::CourseChapter",
   ]
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_05_12_182912) do
+ActiveRecord::Schema[7.0].define(version: 2024_05_18_172854) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,6 +24,35 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_12_182912) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "course_chapters", id: :string, force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.string "course_module_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_module_id"], name: "index_course_chapters_on_course_module_id"
+  end
+
+  create_table "course_modules", id: :string, force: :cascade do |t|
+    t.string "title"
+    t.string "course_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_course_modules_on_course_id"
+  end
+
+  create_table "courses", id: :string, force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "credit_hours"
+    t.string "school_id", null: false
+    t.string "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["school_id"], name: "index_courses_on_school_id"
+    t.index ["user_id"], name: "index_courses_on_user_id"
   end
 
   create_table "schools", id: :string, force: :cascade do |t|
@@ -75,6 +104,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_12_182912) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "course_chapters", "course_modules"
+  add_foreign_key "course_modules", "courses"
+  add_foreign_key "courses", "schools"
+  add_foreign_key "courses", "users"
   add_foreign_key "schools", "addresses"
   add_foreign_key "schools", "categories"
   add_foreign_key "users", "schools"
