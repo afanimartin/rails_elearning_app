@@ -1,5 +1,6 @@
 class TeachersController < ApplicationController
   def index
+    @teacher_courses = current_user.courses
   end
 
   def show
